@@ -1,0 +1,45 @@
+stack = []
+MAX = 5
+
+
+while True:
+    print("\n--- Library Returned Books Stack ---")
+    print("1. Return Book (Push)")
+    print("2. Arrange Book (Pop)")
+    print("3. Top Book (Peek)")
+    print("4. Display Stack")
+    print("5. Exit")
+
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        book = input("Enter book name: ")
+        stack.append(book)
+        print("Book returned successfully.")
+
+    elif choice == 2:
+        if len(stack) == MAX :
+            print("Stack Underflow! No books to arrange.")
+        else:
+            print("Arranged Book:", stack.pop())
+
+    elif choice == 3:
+        if len(stack) == MAX :
+            print("Stack is empty.")
+        else:
+            print("Top Book:", stack[-1])
+
+    elif choice == 4:
+        if len(stack) == MAX :
+            print("Stack is empty.")
+        else:
+            print("Books in Stack (Top to Bottom):")
+            for i in range(len(stack) - 1, -1, -1):
+                print(stack[i])
+
+    elif choice == 5:
+        print("Exiting...")
+        break
+
+    else:
+        print("Invalid choice. Please try again.")
